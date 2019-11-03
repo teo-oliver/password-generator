@@ -40,6 +40,14 @@ const Generator: React.FC = () => {
       });
     }
 
+    const tempArray = generatedPassword.split('');
+    for (var i = tempArray.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = tempArray[i];
+      tempArray[i] = tempArray[j];
+      tempArray[j] = temp;
+    }
+    generatedPassword = tempArray.join('');
     setFormData({ ...formData, password: generatedPassword });
   };
 
@@ -93,11 +101,11 @@ const Generator: React.FC = () => {
         <form onSubmit={e => handleSubmit(e)}>
           <div className="result-container">
             <span id="result">
-              {formData.password ? formData.password : 'password'}
+              {formData.password ? formData.password : <i>password</i>}
             </span>
-            <button className="btn" id="clipboard">
-              <i className="far fa-clipboard">C</i>
-            </button>
+            {/* <button className="btn" id="clipboard">
+              <i className="far fa-clipboard"></i>
+            </button> */}
           </div>
           <div className="settings">
             <div className="setting">

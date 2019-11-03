@@ -16,6 +16,11 @@ export const Wrapper = styled.div`
 `;
 
 export const Card = styled.div`
+  i {
+    font-weight: lighter;
+    color: rgb(33, 138, 174);
+  }
+
   h2 {
     margin: 10px 0 20px;
     text-align: center;
