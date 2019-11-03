@@ -40,6 +40,10 @@ const Generator: React.FC = () => {
       });
     }
 
+    /**
+     * Randomize array element order in-place.
+     * Using Durstenfeld shuffle algorithm.
+     */
     const tempArray = generatedPassword.split('');
     for (var i = tempArray.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
